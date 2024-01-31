@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>food</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-repeat: no-repeat;
+            background-attachment: cover;
+            background-size: cover;
+            background-image: url("https://static01.nyt.com/images/2022/05/18/dining/as-baked-chicken/as-baked-chicken-superJumbo-v2.jpg");
+        }
+
+        form {
+            padding: 40px;
+            background-color: black;
+            border: white;
+            padding-right: 150px;
+            padding-left: 150px;
+            text-align: center;
+            opacity: 0.6;
+            border-color: whitesmoke;
+        }
+
+        .textbox {
+            width: 300px;
+            height: 30px;
+        }
+
+        .submit {
+            height: 30px;
+            width: 100px;
+            background-color: #C7A99D;
+            border-color: #C7A99D;
+            border-radius: 10px;
+        }
+
+        input {
+            margin-bottom: 20px;
+        }
+
+        #item {
+            display: flex;
+            justify-content: center;
+        }
+
+        img {
+            width: 200px;
+            height: 300px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        img.selected {
+            border: 2px solid darkred;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="item">
+        <img src="https://img.freepik.com/free-photo/vertical-shot-pile-fried-chicken-wings-some-spices-wooden-table_181624-28443.jpg?size=626&ext=jpg&ga=GA1.1.1495072477.1706588832&semt=ais" alt="Fried chicken" onclick="selectitem('Fried chicken')">
+        <img src="https://img.freepik.com/free-photo/delicious-chicken-table_144627-8759.jpg?size=626&ext=jpg&ga=GA1.1.1495072477.1706588832&semt=ais" alt="Grill chicken" onclick="selectitem('Grill chicken')">
+        <img src="https://img.freepik.com/free-photo/fried-leg-duck-with-potato-salad_74190-4720.jpg?w=360&t=st=1706588922~exp=1706589522~hmac=99a64cc340f27acf97ffe4f6f3509a0a8d09bff624dadff20e6cf2e0f1d3a427" alt="Infused chicken" onclick="selectitem('Infused chicken')">
+        <img src="https://img.freepik.com/free-photo/top-view-delicious-fried-chicken-with-seasonings-dark-space_140725-75674.jpg?w=360&t=st=1706588866~exp=1706589466~hmac=d77ca08e3c65e9f0aa292769fb55c0752ccecad7a6fc1f967b58d7fbe7299984" alt="Garlic chicken" onclick="selectitem('Garlic chicken')">
+    </div>
+    <form method="post" action="Demo7Servlet">
+        <h1 style="color: white;">Choose a food</h1>
+        <select name="item" id="selectedItem">
+            <option value="--">--</option>
+            <option value="Fried chicken">Fried chicken</option>
+            <option value="Grill chicken">Grill chicken</option>
+            <option value="Infused chicken">Infused chicken</option>
+            <option value="Garlic chicken">Garlic chicken</option>
+        </select><br>
+        <input type="number" name="qty" placeholder="Quantity" required><br>
+        <a href="thankyoupage.html"><button type="submit" onclick="submitForm()" class="submit">submit</button></a>
+    </form>
+
+    <script>
+        function selectitem(item) {
+            document.getElementById('selectedItem').value = item;
+        }
+    </script>
+</body>
+
+</html>
